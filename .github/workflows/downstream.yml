@@ -1,0 +1,15 @@
+name: Deploy
+on:
+  push
+  pull_request
+
+jobs:
+  downstream:
+    name: Update an s3 bucket with recent production/stage tags
+    runs-on: ubuntu-latest
+    steps:
+    - name: Find out
+      run: |
+        echo $GITHUB_REF_NAME
+        #export MODEL=`cat $GITHUB_BASE_REF | gitops parse tag --model`
+        #echo now you can deploy this $MODEL, upload it to s3, or do something else
