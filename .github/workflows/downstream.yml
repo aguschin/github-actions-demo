@@ -13,5 +13,6 @@ jobs:
     - name: Find out
       run: |
         env
+        echo "${{ github.event.base_ref }}"
         #export MODEL=`cat $GITHUB_BASE_REF | gitops parse tag --model`
         #echo now you can deploy this $MODEL, upload it to s3, or do something else
