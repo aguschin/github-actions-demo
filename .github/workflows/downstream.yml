@@ -12,10 +12,10 @@ jobs:
     steps:
     - name: Find out
       run: |
-        echo This workflow is triggered by creation of the $GITHUB_REF_NAME tag in the ${{ github.event.base_ref }} branch
-        echo Here you need to use GitOps OR tool to parse tag name and figure out MODEL_NAME, ACTION (REGISTER/PROMOTE) and VERSION/ENV
+        echo "This workflow is triggered by creation of the $GITHUB_REF_NAME tag in the ${{ github.event.base_ref }} branch"
+        echo "Here you need to use GitOps OR tool to parse tag name and figure out MODEL_NAME, ACTION (REGISTER/PROMOTE) and VERSION/ENV"
         # export MODEL=`cat $GITHUB_BASE_REF | gitops parse tag --model`
-        echo When this is done, you can deploy the model registered, upload it to s3, or do something else
-        echo Now listing all env vars avaliable
+        echo "When this is done, you can deploy the model registered, upload it to s3, or do something else"
+        echo "Now listing all env vars avaliable"
         env
         echo ${{ github.event }}
